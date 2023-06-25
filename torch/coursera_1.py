@@ -7,8 +7,8 @@ from tqdm.notebook import tqdm
 # Load data
 train = datasets.MNIST(root='./datasets', train=True, transform=transforms.ToTensor(), download=True)
 test = datasets.MNIST(root='./datasets', train=True, transform=transforms.ToTensor(), download=True)
-train_loader = torch.utils.data.DataLoader(train, batch_size=50000, shuffle=True)
-test_loader = torch.utils.data.DataLoader(test, batch_size=50000, shuffle=False)
+train_loader = torch.utils.data.DataLoader(train, shuffle=True)
+test_loader = torch.utils.data.DataLoader(test, shuffle=False)
 
 # Init weights
 W = torch.rand(784, 10)/np.sqrt(784)
